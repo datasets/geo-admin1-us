@@ -1,0 +1,14 @@
+file://ne_110m_admin_1_states_provinces.zip <- http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_1_states_provinces.zip ! download
+
+file://ne_110m_admin_1_states_provinces.README.html, file://ne_110m_admin_1_states_provinces.VERSION.txt, file://ne_110m_admin_1_states_provinces.dbf, file://ne_110m_admin_1_states_provinces.prj, file://ne_110m_admin_1_states_provinces.shp, file://ne_110m_admin_1_states_provinces.shx, file://ne_110m_admin_1_states_provinces.sbn <- file://ne_110m_admin_1_states_provinces.zip
+    unzip  ne_110m_admin_1_states_provinces.zip
+
+file://ne_110m_admin_1_states_provinces_us.geojson <- file://ne_110m_admin_1_states_provinces.dbf, file://ne_110m_admin_1_states_provinces.prj, file://ne_110m_admin_1_states_provinces.shp, file://ne_110m_admin_1_states_provinces.shx
+   ogr2ogr -select name,adm1_cod_1,admin,sr_adm0_a3  -where sr_adm0_a3='USA' -f geojson ne_110m_admin_1_states_provinces_us.geojson ne_110m_admin_1_states_provinces.shp
+    
+file://../data <-
+    cd ..
+    mkdir data
+    
+file://../data/admin1-us.geojson <- file://ne_110m_admin_1_states_provinces_us.geojson, file://../data
+    cat ne_110m_admin_1_states_provinces_us.geojson | sed 's/"sr_adm0_a3": /"ISO3166-1-Alpha-3": /g' | sed 's/"adm1_cod_1": /"id": /g' | sed 's/"admin": /"country": /g'  > ../data/admin1-us.geojson
