@@ -1,18 +1,14 @@
-Geodata [data package][datapackage] providing geojson polygons for the largest administrative subdivisions in every countries.
+Geodata [data package][datapackage] providing geojson polygons for the states in the USA.
 
 
 ## Data
-Note : **this dataset and its source are still in BETA**.
-
 The data comes from [Natural Earth][naturalearth], a community effort to make visually pleasing, well-crafted maps with cartography or GIS software at small scale.
 
-[Admin1][doc] is the biggest administrative subdivision of countries. Note that it is very heterogeneous among countries : in the United States 
-of America, admin1 represents states, whereas they don't represent the inner countries in the United Kingdom. For more information, please see [official documentation][doc] 
-or https://en.wikipedia.org/wiki/Table_of_administrative_divisions_by_country.
+This dataset covers the United States of America. admin1 are the biggest administrative area below the country : ie the states. See [documentation][doc] for more information.
 
 The shape of the admin1 have four fields : 
 * name : the common name for this admin1 subdivision
-* id : code for the subdivision inside the country. [Documentation][doc] is not clear what this code is, but it could be FIPS. Note that some countries like *Vatican* are so small they don't have inner administrative subdivision. In that case code could be *null* and in any way it is irrelevant.
+* code : two letter code for the state
 * country : name of the country
 * ISO3166-1-Alpha-3 : three letters iso code of the country
 
