@@ -17,10 +17,6 @@ The shape of the admin1 have four fields :
 [datapackage]: http://dataprotocols.org/data-packages/
 [doc]: http://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-1-states-provinces/
 
-## Preparation
-
-To run the script in order to update the data : see [scripts README](scripts/README.md)
-
 ## License
 
 All data is licensed under the [Open Data Commons Public Domain Dedication and License][pddl]. 
