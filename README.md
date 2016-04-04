@@ -8,7 +8,8 @@ This dataset covers the United States of America. admin1 are the biggest adminis
 
 The shape of the admin1 have four fields : 
 * name : the common name for this admin1 subdivision
-* code : two letter code for the state
+* id : Natural Earth ``adm1_code`` for the subdivision inside the country. [Documentation][doc] is not clear what this code is, but it could be FIPS
+* code : the well known two letter code for the state
 * country : name of the country
 * ISO3166-1-Alpha-3 : three letters iso code of the country
 
